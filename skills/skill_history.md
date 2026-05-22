@@ -1,15 +1,15 @@
 
 ## Trigger
-Load this file when the commander approves a schedule.
+Load this file when the manager approves a schedule.
 
 ---
 
 ## After Approval
 
 1. Append the approved week to `history.md` in the format below.
-2. Update cumulative shift count per soldier.
+2. Update cumulative shift count per worker.
 3. Note any overrides or unresolved conflicts from that week.
-4. Confirm to commander: "השיבוץ נשמר בהיסטוריה. ✓"
+4. Confirm to manager that the schedule has been saved to history.
 
 ---
 
@@ -21,9 +21,9 @@ Load this file when the commander approves a schedule.
 ## [Start Date] to [End Date]
 
 ### This Week's Shifts
-| Soldier | Shifts | Positions |
-|---------|--------|-----------|
-| [Name]  | 3      | Operator, Gate |
+| Worker  | Shifts | Positions         |
+|---------|--------|-------------------|
+| [Name]  | 3      | Gate, Control Room |
 
 ### Notes
 - [Any conflict resolved manually]
@@ -33,7 +33,7 @@ Load this file when the commander approves a schedule.
 
 ## Cumulative Summary
 
-| Soldier | Total Shifts | Total Hours |
+| Worker  | Total Shifts | Total Hours |
 |---------|-------------|-------------|
 | [Name]  | 12          | 48          |
 ```
@@ -43,4 +43,4 @@ Load this file when the commander approves a schedule.
 ## Rules
 - Never overwrite existing history — always append.
 - Always update the cumulative summary table after each week.
-- If a soldier was added or removed mid-week, note it in Notes.
+- If a worker was added or removed mid-week, note it in Notes.

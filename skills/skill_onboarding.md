@@ -1,85 +1,90 @@
 
 ## Trigger
-Load this file when any of the required files are missing: `rules.md`, `soldiers.md`, `constraints.md`.
+Load this file when `config.md` or any of the required files are missing: `rules.md`, `workers.md`, `constraints.md`.
 
 ## Behavior
-Guide the commander through setup one step at a time. Do not ask multiple questions at once. Wait for the answer before moving to the next question.
+Guide the manager through setup one step at a time. Do not ask multiple questions at once. Wait for the answer before moving to the next question.
 
-**אחרי כל תשובה — כתוב את המידע לקובץ הנכון מיד. אל תחכה לסוף השלב.**
+**After every answer — write the information to the correct file immediately. Do not wait until the end of the step.**
 
 ---
 
-## Welcome — הסבר התהליך
+## Step 0 — Language First
 
-פתח בהסבר הבא למפקד:
+Before anything else, ask:
 
-> "שלום! אני עוזר השיבוץ האוטומטי. נעבור יחד על הגדרת המערכת בשלושה שלבים:
->
-> 1. **חוקים** — עמדות שמירה, שעות משמרת, מנוחה, סבבי יציאות, סופי שבוע
-> 2. **חיילים** — שמות, עמדות מורשות, סבב, חוקים אישיים
-> 3. **אילוצים** — הגבלות זמניות פעילות כרגע (פטורים, חופשות, מגבלות)
->
-> בסיום, המערכת תהיה מוכנה לבנות לוז שבועי.
-> ניתן בכל עת לומר 'הוסף חייל', 'הוסף אילוץ', 'הוסף חוק' — ואני אעדכן את הקבצים הנכונים."
+> "What language should I use? / באיזו שפה לדבר? / ¿En qué idioma prefieres? / Quelle langue préférez-vous?"
+
+Write the answer to `config.md` → `language` immediately.
+**From this point on, conduct the entire onboarding in the configured language.**
+
+Then continue asking (one at a time, in the configured language):
+1. What is your organization's name?
+2. What is your title? (e.g. Commander, Manager, Supervisor, Shift Lead)
+3. What do you call the people you schedule? (e.g. Guard, Employee, Soldier, Nurse, Technician)
+4. Does your organization use named groups (rotations, crews, teams, squads)? If yes, what are they called?
+
+Write each answer to `config.md` immediately. Confirm before moving to Step 1.
 
 ---
 
 ## Step 1 — rules.md
 
-שאל אחת אחת:
+Ask one at a time (in the configured language):
 
-1. אילו עמדות שמירה קיימות? רשום את שמותיהן.
-2. לכל עמדה — מהן שעות המשמרת? כמה חיילים נדרשים? מפרטים נוספים?
-3. מהו זמן המנוחה המינימלי בין משמרות?
-4. האם יש מגבלה על מספר משמרות לחייל בשבוע?
-5. כמה סבבי יציאות קיימים? מה שם כל סבב?
-6. מי יוצא בסוף השבוע הקרוב — איזה סבב?
-7. מתי מתחיל ומסתיים סוף השבוע? (יום ושעה מדויקים)
-8. האם יש חוקים כלליים נוספים?
+1. What positions (posts, roles, or stations) exist in your organization? List their names.
+2. For each position — what are the shift hours? How many workers are required per shift? Any other details?
+3. What is the minimum rest time between shifts for a worker?
+4. Is there a maximum number of shifts a worker can do per week?
+5. When does your weekend / time-off window start? (day and time, e.g. "Friday 14:00")
+6. When does it end? (day and time, e.g. "Sunday 06:00")
+7. If groups are enabled: how many groups exist? What is each group named?
+8. Which group is on weekend duty this week?
+9. Are there any other general rules?
 
-→ כתוב כל תשובה ל-`rules.md` **מיד** — לא בסוף השלב.
-→ אשר עם המפקד לפני המעבר לשלב הבא.
+→ Write each answer to `rules.md` immediately — not at the end of the step.
+→ Confirm with the manager before moving to the next step.
 
 ---
 
-## Step 2 — soldiers.md
+## Step 2 — workers.md
 
-שאל:
+Ask (in the configured language):
 
-1. רשום את כל החיילים (ניתן כרשימה מרוכזת).
-2. לכל חייל — באילו עמדות מורשה לשמור?
-3. באיזה סבב נמצא כל חייל?
-4. האם יש לחייל חוקים אישיים קבועים?
+1. List all workers (can be provided as a bulk list).
+2. For each worker — which positions are they permitted to work?
+3. If groups are enabled: which group is each worker in?
+4. Does any worker have permanent personal rules?
 
-> **פירוט הפרטים הנדרשים לכל חייל:**
-> - שם מלא
-> - עמדות מורשות (מרשימת העמדות שהוגדרה בשלב 1)
-> - מספר/שם סבב
-> - חוקים אישיים קבועים — אם יש (לדוגמה: "עולה רק בסוף שבוע סוגר", "לא בלילות")
+**Details required per worker:**
+- Full name
+- Permitted positions (from the list defined in Step 1)
+- Group name or number (if groups are enabled)
+- Permanent personal rules — if any (e.g. "weekends only", "no night shifts")
 
-→ כתוב כל חייל ל-`soldiers.md` **מיד** עם קבלת הפרטים.
-→ חוקים אישיים קבועים — הוסף גם ל-`rules.md` תחת סעיף "חוקים אישיים".
-→ אשר עם המפקד לפני המעבר לשלב הבא.
+→ Write each worker to `workers.md` immediately upon receiving their details.
+→ Permanent personal rules — also add to `rules.md` under a "Personal Rules" section.
+→ Confirm with the manager before moving to the next step.
 
 ---
 
 ## Step 3 — constraints.md
 
-שאל:
+Ask (in the configured language):
 
-1. האם יש אילוצים זמניים פעילים כרגע? (פטורים, חופשות, מגבלות עם תאריך סיום)
-2. האם יש אילוץ על סבב שלם? (לדוגמה: "סבב 2 לא זמין כל השבוע")
+1. Are there any active temporary constraints right now? (exemptions, leave, restrictions with an end date)
+2. Is there a constraint on an entire group? (e.g. "Group 2 unavailable all week")
 
-> **סוגי אילוצים אפשריים:**
-> - חייל בודד — פטור, מגבלת שעות, עמדה ספציפית, תקופה מוגדרת
-> - סבב שלם — כל חיילי הסבב לא זמינים בתקופה מסוימת
+**Possible constraint types:**
+- Individual worker — exemption, time restriction, specific position, defined period
+- Entire group — all workers in the group unavailable for a period
 
-→ אם כן — צור `constraints.md` עם פרטים ותאריכי פקיעה. כתוב כל אילוץ **מיד**.
-→ אם לא — צור `constraints.md` ריק.
+→ If yes — create `constraints.md` with details and expiry dates. Write each constraint immediately.
+→ If no — create an empty `constraints.md`.
 
 ---
 
 ## Step 4 — Confirm
 
-סכם את שלושת הקבצים בחזרה למפקד בעברית ברורה.
-שאל: "הכל נראה תקין? אפשר להתחיל לבנות שיבוצים."
+Summarize all files back to the manager in the configured language.
+Ask: "Does everything look correct? Ready to build the first schedule."
